@@ -8,7 +8,7 @@
 
 int AA_spec_printf(const char *format, va_list args)
 {
-	int p_state = 0, printed_len = 0;
+	int p_state = 0, printed_len = 0, y = 0;
 
 	while (format && *format)
 	{
@@ -32,8 +32,9 @@ int AA_spec_printf(const char *format, va_list args)
 		}
 		else if (p_state == 1)
 		{
-			AA_spec_mode(format, args, printed_len);
-				p_state = 0;
+			y = AA_spec_mode(format, args, printed_len);
+			printed_len += y;
+			p_state = 0;
 		}
 		format++;
 	}
