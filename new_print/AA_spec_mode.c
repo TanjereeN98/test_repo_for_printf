@@ -10,8 +10,10 @@
 
 int AA_spec_mode(const char *format, va_list args, int printed_len)
 {
-	int i = 0, count, out_1;
+	int i = 0, count, out_1, y;
+	char AA_array[33];
 
+	_memset(AA_array, '0', 33);
 	i = printed_len;
 	if (*format == 'c')
 	{
@@ -31,10 +33,8 @@ int AA_spec_mode(const char *format, va_list args, int printed_len)
 	}
 	else if (*format == 'd' || *format == 'i')
 	{
-		int i = va_arg(args, int);
-		char AA_array[32];
-
-		AA_itwos(i, AA_array);
+		y = va_arg(args, int);
+		AA_itwos(y, AA_array);
 		for (count = 0 ; AA_array[count] != '\0' ; count++)
 		{
 			_putchar(AA_array[count]);
