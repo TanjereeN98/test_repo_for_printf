@@ -19,7 +19,7 @@ int AA_spec_printf(const char *format, va_list args)
 			{
 				_putchar('%');
 				printed_len++;
-				format += 2;
+				format ++;
 			}
 			else if (*format == '%')
 				p_state = 1;

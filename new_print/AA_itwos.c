@@ -11,8 +11,8 @@ void AA_itwos(int num, char *s_buff)
 
 	if (num == 0)
 	{
-		_putchar('0');
-		s_buff[0] = '\0';
+		s_buff[0] = '0';
+		s_buff[1] = '\0';
 	}
 	temp_num = num;
 	while (temp_num != 0)
