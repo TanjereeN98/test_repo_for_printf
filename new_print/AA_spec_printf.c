@@ -8,14 +8,22 @@
 
 int AA_spec_printf(const char *format, va_list args)
 {
-	int p_state = 0, printed_len = 0, y = 0;
+	int p_state = 0, printed_len = 0, y = 0, i = 0;
+	const char error_msg[] = "error: spurious trailing ‘%’ in format [-Werror=format=]";
 
 	while (format && *format)
 	{
 		if (p_state == 0)
 		{
 			if (*format == '%' && *(format + 1) == '\0')
-				return (-1);
+			{
+				while (*error_msg)
+				{
+					_putchar(error_msg[i]);
+					i++;
+				}
+				exit (1);
+			}
 			else if (*format == '%' && *(format + 1) == '%')
 			{
 				_putchar('%');
