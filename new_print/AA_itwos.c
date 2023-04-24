@@ -9,7 +9,7 @@ void AA_itwos(int num, char *s_buff)
 {
 	int temp_num, count, len = 0, rem = 0, new_p_int = 0;
 
-	if (num = 0) //zero case
+	if (num == 0)
 	{
 		_putchar('0');
 		s_buff[0] = '\0';
@@ -20,7 +20,7 @@ void AA_itwos(int num, char *s_buff)
 		temp_num /= 10;
 		len++;
 	}
-	if (num < 0) //negative case
+	if (num < 0)
 	{
 		new_p_int = num * -1;
 		for (count = 0 ; count < len ; count++)
@@ -32,7 +32,7 @@ void AA_itwos(int num, char *s_buff)
 		s_buff[0] = '-';
 		s_buff[len + 1] = '\0';
 	}
-	if (num > 0) //positive case
+	if (num > 0)
 	{
 		for (count = 0 ; count < len ; count++)
 		{

@@ -1,8 +1,10 @@
 #include "main.h"
-void _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
+	int y;
 	va_list args_list;
 	va_start(args_list, format);
-	AA_spec_printf(format, list);
-	va_end(list);
+	y = AA_spec_printf(format, args_list);
+	va_end(args_list);
+	return (y);
 }
